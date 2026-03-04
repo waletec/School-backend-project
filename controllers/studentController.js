@@ -1,19 +1,6 @@
 import StudentModel from '../models/studentModel.js';
 
 const StudentController = {
-  async search(req, res, next) {
-    try {
-      const { name = '', classId } = req.query;
-      if (!name.trim()) {
-        return res.status(400).json({ error: 'name query parameter is required' });
-      }
-
-      const students = await StudentModel.searchStudents({ name: name.trim(), classId });
-      res.json(students);
-    } catch (err) {
-      next(err);
-    }
-  },
 
   async getDetails(req, res, next) {
     try {

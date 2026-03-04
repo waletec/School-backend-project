@@ -3,9 +3,6 @@ import StudentController from '../controllers/studentController.js';
 
 const router = express.Router();
 
-// Client/Admin: search students by name + optional class
-router.get('/search', StudentController.search);
-
 // Get student basic details
 router.get('/:id', StudentController.getDetails);
 
